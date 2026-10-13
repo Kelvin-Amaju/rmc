@@ -388,7 +388,7 @@ p {
   justify-content: center;
 }
 .mobile-nav .mail-btn:hover {
-  color: var(--white);
+  color: var(--navy);
 }
 .offcanvas .btn-close {
   filter: invert(1);
@@ -1957,7 +1957,9 @@ html {
   color: #fff;
 }
 .mobile-nav .mail-btn {
-  color: #000000;
+  /* Keep all mobile menus consistent, including links with Bootstrap bg-light. */
+  background: var(--white) !important;
+  color: var(--navy);
   border-color: transparent;
 }
 .eyebrow {
@@ -3128,18 +3130,10 @@ html {
 .offcanvas-rmc.showing {
   transform: translateX(0);
 }
-/* Opening experiment: pause at halfway for 104 ms, then ease fully open.
-   Bootstrap reads this transition duration to time focus and shown events. */
+/* Continuous opening motion with a gentle slowdown as the panel settles. */
 .offcanvas-rmc.showing {
-  transition-duration: 0.8s;
-}
-@supports (transition-timing-function: linear(0, 1)) {
-  .offcanvas-rmc.showing {
-    transition-timing-function: linear(
-      0, 0.08 8%, 0.28 20%, 0.46 32%, 0.5 38%,
-      0.5 51%, 0.54 59%, 0.72 73%, 0.94 90%, 1
-    );
-  }
+  transition-duration: 0.55s;
+  transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .offcanvas-rmc.hiding {
   transform: translateX(-105%);
