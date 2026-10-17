@@ -1,0 +1,34 @@
+/* RMC content within the existing v9 template layout. */
+:root { --amonx-base: #96682a; --amonx-base-rgb: 150, 104, 42; --amonx-black5: #082442; --amonx-black5-rgb: 8, 36, 66; }
+.rmc-site .amonx-btn, .rmc-site .rmc-info-card, .rmc-site .project-two__item, .rmc-site .rmc-portrait-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.rmc-site .rmc-info-card:hover, .rmc-site .project-two__item:hover, .rmc-site .rmc-portrait-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(5, 23, 45, .16); border-color: rgba(200, 154, 67, .75); }
+.rmc-site .rmc-page-photo, .rmc-site .project-two__item__image img, .rmc-site .rmc-portrait-card img { transition: transform .7s ease; }
+.rmc-site .project-two__item:hover .project-two__item__image img, .rmc-site .rmc-portrait-card:hover img { transform: scale(1.035); }
+.rmc-site .main-header__inner { box-shadow: 0 18px 50px rgba(5, 23, 45, .3); }
+.rmc-portrait-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+.rmc-portrait-card { margin: 0; overflow: hidden; border-radius: 18px; background: var(--rmc-navy, #082442); }
+.rmc-portrait-card img { display: block; width: 100%; height: 320px; object-fit: cover; object-position: center 22%; }
+@media (max-width: 991px) { .rmc-portrait-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 575px) { .rmc-portrait-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .rmc-portrait-card img { height: 260px; } }
+@media (prefers-reduced-motion: reduce) {
+  .rmc-site *, .rmc-site *::before, .rmc-site *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+  .rmc-site .rmc-hero-pause { display: none !important; }
+  .rmc-site .rmc-info-card:hover, .rmc-site .project-two__item:hover, .rmc-site .rmc-portrait-card:hover { transform: none; }
+}
+.main-header__logo img, .sidebar-two__logo img, .mobile-nav__content .logo-box img { max-width: 100%; height: auto; }
+.about-two__image__box > img, .project-two__item__image img { object-fit: cover; }
+.rmc-partner-copy { height: auto; padding: 28px; align-self: center; }
+.rmc-partner-copy h3 { font-size: 28px; margin-bottom: 20px; }
+.rmc-partner-copy p { font-size: 17px; line-height: 1.9; }
+.sidebar-two__info__list a, .footer-widget__contact__title a { overflow-wrap: anywhere; }
+.client-carousel__image, .client-carousel__hover__image { object-fit: contain; }
+.client-carousel__image { max-height: 90px; width: auto !important; margin: auto; }
+.client-carousel__hover__image { max-height: 90px; }
+.testimonials-two__info__title--rating { font-size: 15px; }
+.bi::before { line-height: 1; }
+@media (max-width: 767px) {
+  .rmc-partner-copy { padding: 20px 0; }
+  .main-header__logo img { max-width: 180px; }
+}
+
+.owl-video-play-icon::before { font-family: bootstrap-icons; content: "\f4f2"; font-size: 80px; line-height: 1; color: #fff; }

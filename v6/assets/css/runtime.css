@@ -1,0 +1,5 @@
+/* Keep content accessible if an optional animation dependency fails. */
+.preloader[hidden] { display: none !important; }
+html:not(.v9-ready) .owl-carousel { display: block; }
+.mobile-nav__container .dropdown > ul { display: none; }
+.mobile-nav__container .dropdown.mobile-open > ul { display: block; }

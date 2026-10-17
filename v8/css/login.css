@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "DM Sans", sans-serif; color: #5b6673; background: #f4f7fa; font-size: 16px; line-height: 1.6; }
+a { color: #3576a2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+button, input { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #3576a2; outline-offset: 4px; }
+.staff-login-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; min-height: 100svh; }
+.staff-login-visual { position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 48px clamp(32px, 5vw, 80px); color: #fff; background: linear-gradient(180deg, rgba(14,42,71,.48), rgba(14,42,71,.72) 45%, #0e2a47), url('../assets/img/boardroom.webp') center / cover; }
+.staff-back { color: #fff; align-self: flex-start; font-size: 14px; }
+.staff-back span { margin-right: 10px; }
+.staff-visual-copy { padding: 100px 0; max-width: 540px; }
+.staff-eyebrow { display: block; font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.staff-visual-copy .staff-eyebrow { color: #c5dbea; }
+.staff-visual-copy h1 { font-family: Sora, sans-serif; font-size: clamp(32px, 3.6vw, 56px); font-weight: 500; line-height: 1.2; letter-spacing: -.045em; margin: 24px 0; color: #fff; }
+.staff-visual-copy p { max-width: 380px; color: #d5e1ec; }
+.staff-visual-footer { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding-top: 24px; border-top: 1px solid #ffffff30; font-size: 11px; letter-spacing: .06em; }
+.staff-login-panel { display: flex; align-items: center; justify-content: center; padding: 64px clamp(28px, 5vw, 80px); background: #fff; }
+.staff-login-box { width: 100%; max-width: 400px; }
+.staff-brand { display: inline-block; margin-bottom: 44px; }
+.staff-brand img { display: block; width: 220px; max-width: 100%; height: auto; }
+.staff-login-box .staff-eyebrow { color: #3576a2; }
+.staff-login-box h2 { margin: 14px 0 12px; color: #0e2a47; font-family: Sora, sans-serif; font-size: clamp(30px, 3vw, 40px); font-weight: 600; letter-spacing: -.04em; line-height: 1.2; }
+.staff-login-intro { margin: 0 0 32px; }
+.staff-field { margin-bottom: 22px; }
+.staff-field label { display: block; margin-bottom: 8px; color: #0e2a47; font-size: 14px; font-weight: 600; }
+.staff-field input { width: 100%; min-width: 0; padding: 14px 16px; border: 1px solid #d8dde1; border-radius: 6px; color: #0e2a47; background: #f8fafc; }
+.staff-field input:focus { border-color: #3576a2; background: #fff; }
+.staff-password { position: relative; }
+.staff-password input { padding-right: 76px; }
+.staff-password button { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); padding: 8px; border: 0; background: transparent; color: #3576a2; cursor: pointer; font-size: 13px; font-weight: 600; }
+.staff-submit { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 15px 20px; border: 1px solid #3576a2; border-radius: 6px; background: #3576a2; color: #fff; font-weight: 600; cursor: pointer; }
+.staff-submit:hover { background: #2a5d82; }
+.staff-submit > span:last-child { font-size: 22px; line-height: 1; }
+.staff-login-status { font-size: 14px; margin: 12px 0; }
+.staff-login-status:empty { display: none; }
+.staff-direct { display: inline-block; margin-top: 20px; font-size: 14px; font-weight: 600; }
+.staff-direct span { margin-left: 8px; }
+.staff-login-help { margin-top: 30px; padding-top: 22px; border-top: 1px solid #e4e9ef; font-size: 13px; }
+@media (max-width: 900px) { .staff-login-layout { grid-template-columns: 42% 58%; } .staff-login-visual { padding: 36px 28px; } .staff-visual-copy h1 { font-size: 34px; } .staff-visual-footer { flex-direction: column; } }
+@media (max-width: 640px) { .staff-login-layout { grid-template-columns: 1fr; } .staff-login-visual { padding: 24px; } .staff-visual-copy { padding: 36px 0 12px; } .staff-visual-copy h1 { font-size: 32px; margin: 16px 0; } .staff-visual-copy p { margin-bottom: 8px; font-size: 14px; } .staff-visual-footer { display: none; } .staff-login-panel { padding: 36px 24px 48px; } .staff-brand { margin-bottom: 28px; } }

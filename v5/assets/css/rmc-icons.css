@@ -1,0 +1,6 @@
+@import url("bootstrap-icons.min.css");
+/* Compatibility for the existing, unchanged page headers. */
+.rmci-arrow-right::before { font-family: bootstrap-icons !important; font-style: normal; font-weight: normal; content: "\f144"; }
+.rmci-menubar::before { font-family: bootstrap-icons !important; font-style: normal; font-weight: normal; content: "\f479"; }
+.rmci-close::before { font-family: bootstrap-icons !important; font-style: normal; font-weight: normal; content: "\f659"; }
+.rmci-location::before { font-family: bootstrap-icons !important; font-style: normal; font-weight: normal; content: "\f3e8"; }

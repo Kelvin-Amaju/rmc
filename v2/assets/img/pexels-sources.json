@@ -1,0 +1,72 @@
+{
+  "photos": [
+    {
+      "id": 2049001,
+      "url": "https://images.pexels.com/photos/2049001/pexels-photo-2049001.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/2049001/",
+      "description": "Agricultural workers in a green field"
+    },
+    {
+      "id": 4483608,
+      "url": "https://images.pexels.com/photos/4483608/pexels-photo-4483608.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/4483608/",
+      "description": "Warehouse shelves and inventory"
+    },
+    {
+      "id": 4492074,
+      "url": "https://images.pexels.com/photos/4492074/pexels-photo-4492074.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/4492074/",
+      "description": "Textile production in a factory"
+    },
+    {
+      "id": 5452269,
+      "url": "https://images.pexels.com/photos/5452269/pexels-photo-5452269.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/5452269/",
+      "description": "Medical professionals collaborating"
+    },
+    {
+      "id": 6285130,
+      "url": "https://images.pexels.com/photos/6285130/pexels-photo-6285130.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/6285130/",
+      "description": "Financial analysis at an office meeting"
+    },
+    {
+      "id": 7433874,
+      "url": "https://images.pexels.com/photos/7433874/pexels-photo-7433874.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/7433874/",
+      "description": "Business professionals reviewing financial documents"
+    },
+    {
+      "id": 7691724,
+      "url": "https://images.pexels.com/photos/7691724/pexels-photo-7691724.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/7691724/",
+      "description": "Reviewing financial reports"
+    },
+    {
+      "id": 7710140,
+      "url": "https://images.pexels.com/photos/7710140/pexels-photo-7710140.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/7710140/",
+      "description": "Professionals collaborating in an office"
+    },
+    {
+      "id": 8470836,
+      "url": "https://images.pexels.com/photos/8470836/pexels-photo-8470836.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/8470836/",
+      "description": "Signing a business contract"
+    },
+    {
+      "id": 11347815,
+      "url": "https://images.pexels.com/photos/11347815/pexels-photo-11347815.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/11347815/",
+      "description": "Oil refinery and energy infrastructure"
+    },
+    {
+      "id": 12584847,
+      "url": "https://images.pexels.com/photos/12584847/pexels-photo-12584847.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "source": "https://www.pexels.com/photo/12584847/",
+      "description": "Government building, illustrative sector photograph"
+    }
+  ],
+  "icons": "https://icons.getbootstrap.com/",
+  "icon_version": "1.13.1"
+}

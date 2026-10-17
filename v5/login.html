@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Staff webmail access for Rheriene Mabamidje &amp; Co., Chartered Accountants.">
+  <meta name="theme-color" content="#122325">
+  <title>Staff Login | Rheriene Mabamidje &amp; Co.</title>
+  <link rel="icon" href="assets/img/rmc-logo.png">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <script src="assets/js/login.js" defer></script>
+</head>
+<body class="staff-login-page">
+  <main class="staff-login-layout">
+    <section class="staff-login-visual" aria-labelledby="portal-heading">
+      <a href="index.html" class="staff-back"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to website</a>
+      <div class="staff-visual-copy">
+        <span class="staff-eyebrow">RMC STAFF PORTAL</span>
+        <h1 id="portal-heading">Professionalism.<br>In every detail.</h1>
+        <p>A shared commitment to excellence in accounting, audit, tax and advisory services.</p>
+      </div>
+      <div class="staff-visual-footer"><span>Rheriene Mabamidje &amp; Co.</span><span>Chartered Accountants</span></div>
+    </section>
+
+    <section class="staff-login-panel" aria-labelledby="login-heading">
+      
+      <div class="staff-login-box">
+        <span class="staff-login-symbol" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+        <span class="staff-eyebrow">STAFF WEBMAIL</span>
+        <h2 id="login-heading">Welcome back.</h2>
+        <p class="staff-login-intro">Sign in with your firm email address to access your mailbox.</p>
+
+        <form id="staffLoginForm" action="https://server354.web-hosting.com:2096/login/?login_theme=cpanel" method="post">
+          <div class="staff-field">
+            <label for="user">Email address</label>
+            <input id="user" name="user" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="you@mabamidje.com" required>
+          </div>
+          <div class="staff-field">
+            <label for="pass">Password</label>
+            <div class="staff-password">
+              <input id="pass" name="pass" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+              <button id="togglePassword" type="button" aria-controls="pass" aria-label="Show password" aria-pressed="false"><i class="bi bi-eye" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <button class="staff-submit" type="submit"><span>Sign in to webmail</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></button>
+          <p id="loginStatus" class="staff-login-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <a class="staff-direct" href="https://server354.web-hosting.com:2096">Open webmail directly <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <div class="staff-login-help">Need help accessing your account? <a href="contact.html">Contact the firm</a></div>
+      </div>
+      <div class="staff-panel-footer">&copy; 2026 Rheriene Mabamidje &amp; Co.</div>
+    </section>
+  </main>
+</body>
+</html>

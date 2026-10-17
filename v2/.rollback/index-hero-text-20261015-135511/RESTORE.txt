@@ -1,0 +1,1 @@
+Restore index.html and assets/css/custom.css from this folder to the same paths under v2 to revert the hero text update.

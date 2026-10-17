@@ -1,0 +1,122 @@
+/* RMC brand overrides for the Bizen port
+   Loaded AFTER css/style.css. Palette derived from the approved logo
+   (brand-logo.png: blue #3576A2 + grey #999999) with a deep navy for
+   dark sections. */
+
+:root {
+   --primary: #3576a2;
+   --primary-rgb: 53, 118, 162;
+   --primary-mute: #eaf3fa;
+   --hover: #2a5d82;
+   --secondary: #0e2a47;
+   --secondary-rgb: 14, 42, 71;
+   --headings-color: #0e2a47;
+   --dark: #0e2a47;
+   --dark-alt: #133554;
+   --dark-rgb: 14, 42, 71;
+   --light: #f4f7fa;
+   --body-color: #5b6673;
+}
+
+/* Bootstrap-style utility classes are hardcoded in style.css, so they must
+   be overridden here as well. */
+.bg-primary {
+   background-color: #3576a2 !important;
+}
+
+.bg-secondary {
+   background-color: #0e2a47 !important;
+}
+
+.text-primary {
+   color: #3576a2 !important;
+}
+
+.btn-primary {
+   background-color: #3576a2;
+   border-color: #3576a2;
+   color: #fff;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+   background-color: #2a5d82;
+   border-color: #2a5d82;
+   color: #fff;
+}
+
+.btn-secondary {
+   background-color: #0e2a47;
+   border-color: #0e2a47;
+   color: #fff;
+}
+
+.btn-secondary:focus,
+.btn-secondary:hover {
+   background-color: #0a2038;
+   border-color: #0a2038;
+   color: #fff;
+}
+
+/* Logo sizing: approved logo is 397x140 (wide). */
+.navbar-brand img,
+.offcanvas-header img {
+   max-height: 52px;
+   width: auto;
+}
+
+.canvas-menu .logo img {
+   max-height: 46px;
+   width: auto;
+}
+
+/* The dark canvas menu uses the white logo variant. */
+.canvas-menu .logo img.rmc-logo-dark-bg {
+   max-height: 46px;
+}
+
+/* Compact cards for the seven core services on the services page. */
+.core-services .service-entry2 {
+   height: 100%;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+}
+.core-services .serv-thumb {
+   margin-bottom: 16px;
+}
+.core-services .serv-thumb img {
+   width: 100%;
+   height: 120px;
+   object-fit: cover;
+   border-radius: 4px;
+}
+.core-services .service-entry2 .serv-inner,
+.core-services .service-entry2:hover .serv-inner {
+   transform: none;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+.core-services .serv-icon svg {
+   width: 36px;
+   height: 36px;
+}
+.core-services .service-entry2 h3 {
+   font-size: 18px;
+   line-height: 1.35;
+   margin: 12px 0 10px;
+}
+.core-services .service-entry2 p {
+   font-size: 15px;
+   line-height: 1.6;
+   margin-bottom: 16px;
+}
+.core-services .service-entry2 .serv-inner .btn {
+   opacity: 1;
+   visibility: visible;
+   margin-top: auto;
+   align-self: flex-start;
+   padding: 10px 16px;
+}

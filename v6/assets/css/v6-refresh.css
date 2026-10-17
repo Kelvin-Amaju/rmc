@@ -1,0 +1,498 @@
+/* ==========================================================================
+   v6 refresh - Rheriene Mabamidje & Co.
+   Loaded after pages.css, so it wins every same-specificity conflict.
+   Everything is scoped to .rmc-site; the vendor template sheet is untouched.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------- 1. palette */
+:root {
+  --amonx-base: #96682a;
+  --amonx-base-rgb: 150, 104, 42;
+  --amonx-primary: #082442;
+  --amonx-primary-rgb: 8, 36, 66;
+  --amonx-white2: #f6f5f1;
+  --amonx-white2-rgb: 246, 245, 241;
+  --amonx-black3: #05172d;
+  --amonx-black3-rgb: 5, 23, 45;
+  --amonx-black5: #082442;
+  --amonx-black5-rgb: 8, 36, 66;
+  --amonx-border-color: #dde3e1;
+  --amonx-border-color-rgb: 221, 227, 225;
+
+  --rmc-navy: #082442;
+  --rmc-navy-deep: #05172d;
+  --rmc-gold: #c89a43;
+  --rmc-gold-deep: #96682a;
+  --rmc-cream: #f6f5f1;
+}
+
+/* ---------------------------------------------------------------- 2. header */
+.rmc-site .main-header__inner {
+  background-color: var(--rmc-navy);
+  background-image: none;
+  border: 1px solid rgba(200, 154, 67, .3);
+}
+.rmc-site .main-header .sidebar-btn__toggler {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .main-header .sidebar-btn__toggler:hover {
+  background-color: #ffffff;
+  color: var(--rmc-navy);
+}
+.rmc-site .main-menu .main-menu__list > li > a:hover,
+.rmc-site .main-menu .main-menu__list > li > a[aria-current="page"] {
+  color: var(--rmc-gold);
+}
+.rmc-site .main-header--two .main-header__phone__icon {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .main-header--two .main-header__phone:hover {
+  background-color: var(--rmc-gold);
+}
+.rmc-site .main-header--two .main-header__phone:hover .main-header__phone__number {
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .main-header--two .main-header__phone:hover .main-header__phone__icon {
+  background-color: var(--rmc-navy-deep);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------- 3. hero */
+.rmc-hero {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: clamp(680px, 94vh, 980px);
+  min-height: clamp(680px, 94svh, 980px);
+  background-color: var(--rmc-navy-deep);
+}
+.rmc-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--rmc-navy-deep);
+}
+.rmc-hero__slide {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  animation: rmcHeroSlide 18s linear infinite;
+}
+.rmc-hero__slide:nth-child(1) { opacity: 1; }
+.rmc-hero__slide:nth-child(2) { animation-delay: 6s; }
+.rmc-hero__slide:nth-child(3) { animation-delay: 12s; }
+.rmc-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, rgba(4, 13, 24, .96) 0%, rgba(4, 13, 24, .42) 45%, rgba(4, 13, 24, .16) 100%),
+    linear-gradient(105deg, rgba(4, 15, 28, .95) 0%, rgba(6, 26, 48, .84) 42%, rgba(8, 36, 66, .52) 74%, rgba(8, 36, 66, .34) 100%);
+}
+.rmc-hero__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 44px;
+  width: 100%;
+  padding-top: 176px;
+  padding-bottom: 54px;
+}
+.rmc-site .rmc-hero__content { max-width: 830px; }
+.rmc-site .rmc-hero .rmc-hero__eyebrow {
+  color: var(--rmc-gold);
+}
+.rmc-hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  animation: rmcHeroRise .8s cubic-bezier(.22, .7, .28, 1) .1s both;
+}
+.rmc-site .rmc-hero__eyebrow::before { width: 52px; }
+.rmc-hero__title {
+  margin: 0 0 26px;
+  font-family: var(--amonx-heading-font, "Urbanist", sans-serif);
+  font-size: clamp(42px, 6vw, 88px);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -.02em;
+  color: #ffffff;
+  animation: rmcHeroRise .9s cubic-bezier(.22, .7, .28, 1) .22s both;
+}
+.rmc-hero__title em {
+  display: block;
+  font-style: italic;
+  color: var(--rmc-gold);
+}
+.rmc-hero__lead {
+  max-width: 660px;
+  margin-bottom: 38px;
+  color: #d3dae6;
+  font-size: clamp(16px, 1.15vw, 19px);
+  line-height: 1.8;
+  animation: rmcHeroRise .9s cubic-bezier(.22, .7, .28, 1) .38s both;
+}
+.rmc-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  animation: rmcHeroRise .9s cubic-bezier(.22, .7, .28, 1) .54s both;
+}
+.rmc-hero__actions .amonx-btn { padding: 17px 34px; }
+.rmc-hero__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  margin-top: 8px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+  animation: rmcHeroRise .9s cubic-bezier(.22, .7, .28, 1) .7s both;
+}
+.rmc-hero__credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rmc-hero__credentials li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e8edf5;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rmc-hero__credentials li i {
+  color: var(--rmc-gold);
+  font-size: 16px;
+}
+.rmc-site .rmc-hero-pause {
+  position: static;
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .08);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+}
+.rmc-site .rmc-hero-pause:hover {
+  background-color: var(--rmc-gold);
+  border-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+body.rmc-hero-paused .rmc-hero__slide { animation-play-state: paused; }
+
+@keyframes rmcHeroSlide {
+  0%    { opacity: 1; transform: scale(1.06); }
+  30.5% { opacity: 1; transform: scale(1.12); }
+  36.6% { opacity: 0; transform: scale(1.13); }
+  94%   { opacity: 0; transform: scale(1.05); }
+  100%  { opacity: 1; transform: scale(1.06); }
+}
+@keyframes rmcHeroRise {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------------------------------- 4. eyebrows / sec-titles */
+.rmc-site .rmc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--rmc-gold-deep);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.rmc-site .rmc-eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  flex: none;
+  background-color: var(--rmc-gold);
+}
+.rmc-site .rmc-page-cta .rmc-eyebrow { color: var(--rmc-gold); }
+
+.rmc-site .sec-title__tagline {
+  display: inline-flex;
+  gap: 14px;
+  padding: 0;
+  margin-bottom: 18px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--rmc-gold-deep);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+.rmc-site .sec-title__tagline::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  flex: none;
+  background-color: var(--rmc-gold);
+}
+.rmc-site .sec-title--center .sec-title__tagline { justify-content: center; }
+.rmc-site .sec-title--white .sec-title__tagline { color: var(--rmc-gold); }
+.rmc-site .sec-title__tagline__icon { display: none; }
+.rmc-site .sec-title__title {
+  color: var(--rmc-navy);
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.14;
+  letter-spacing: -.01em;
+}
+.rmc-site .sec-title--white .sec-title__title { color: #ffffff; }
+
+/* ---------------------------------------------------------------- 5. buttons */
+.rmc-site .amonx-btn {
+  border-radius: 6px;
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.rmc-site .amonx-btn:hover {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .amonx-btn::before,
+.rmc-site .amonx-btn::after {
+  background-color: #ffffff;
+}
+.rmc-site .amonx-btn--white {
+  background-color: #ffffff;
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .amonx-btn--white::before,
+.rmc-site .amonx-btn--white::after {
+  background-color: var(--rmc-gold);
+}
+.rmc-site .amonx-btn--white:hover {
+  background-color: #ffffff;
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .rmc-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, .45);
+  background-color: transparent;
+  color: #ffffff;
+}
+.rmc-site .rmc-btn-ghost::before,
+.rmc-site .rmc-btn-ghost::after {
+  background-color: var(--rmc-gold);
+}
+.rmc-site .rmc-btn-ghost:hover {
+  border-color: var(--rmc-gold);
+  background-color: transparent;
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .about-two .tab-buttons .amonx-btn { color: #ffffff; }
+.rmc-site .about-two .tab-buttons .amonx-btn::before,
+.rmc-site .about-two .tab-buttons .amonx-btn::after { display: none; }
+.rmc-site .about-two .tab-buttons .amonx-btn:hover,
+.rmc-site .about-two .tab-buttons .amonx-btn.active-btn {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+
+/* ------------------------------------------------------------ 6. page banner */
+.rmc-site .rmc-page-banner { background-color: var(--rmc-navy-deep); }
+.rmc-site .rmc-page-banner .page-header__bg { opacity: 1; }
+.rmc-site .rmc-page-banner .page-header__bg::after {
+  background: linear-gradient(100deg, rgba(5, 23, 45, .97) 0%, rgba(5, 23, 45, .88) 46%, rgba(5, 23, 45, .62) 100%);
+}
+.rmc-site .rmc-page-banner .page-header__title {
+  letter-spacing: -.01em;
+}
+.rmc-site .rmc-breadcrumb::before {
+  content: "";
+  width: 46px;
+  height: 2px;
+  flex: none;
+  background-color: var(--rmc-gold);
+}
+
+/* ------------------------------------------------------------------ 7. cards */
+.rmc-site .rmc-info-card,
+.rmc-site .rmc-enquiry-form,
+.rmc-site .rmc-soft .rmc-info-card { border-radius: 20px; }
+.rmc-site .rmc-card-number {
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--rmc-gold-deep);
+}
+.rmc-site .rmc-info-card:hover,
+.rmc-site .rmc-service-card:hover { border-color: rgba(200, 154, 67, .75); }
+
+/* ----------------------------------------------------------------- 8. footer */
+.rmc-site .main-footer { background-color: var(--rmc-navy-deep); }
+.rmc-site .footer-widget__title {
+  position: relative;
+  padding-bottom: 14px;
+}
+.rmc-site .footer-widget__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 42px;
+  height: 2px;
+  background-color: var(--rmc-gold);
+}
+.rmc-site .footer-widget__links li a:hover,
+.rmc-site .main-footer__page li a:hover,
+.rmc-site .main-footer--two .footer-widget__links li a:hover,
+.rmc-site .main-footer--two .footer-widget__contact__title a:hover {
+  color: var(--rmc-gold);
+}
+.rmc-site .main-footer--two .footer-widget__links li:hover::before {
+  background-color: var(--rmc-gold);
+}
+.rmc-site .main-footer .social-links--border a:hover {
+  border-color: var(--rmc-gold);
+  background-color: var(--rmc-gold);
+}
+.rmc-site .main-footer .social-links--border a:hover .social-links__icon {
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .footer-widget__newsletter__text { margin-bottom: 24px; }
+
+/* --------------------------------------------------------- 9. dark-on-dark bits */
+.rmc-site .mobile-nav__contact__icon {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .mobile-nav__contact li a:hover,
+.rmc-site .mobile-nav__content .main-menu__list li a.expanded { color: var(--rmc-gold); }
+.rmc-site .sidebar-two__info__list li:hover .sidebar-two__info__icon {
+  background-color: var(--rmc-gold);
+  color: var(--rmc-navy-deep);
+}
+.rmc-site .sidebar-two .social-links a:hover { background-color: var(--rmc-gold); }
+.rmc-site .sidebar-two .social-links a:hover .social-links__icon { color: var(--rmc-navy-deep); }
+.rmc-site .call-area__phone__icon { color: var(--rmc-gold); }
+
+/* ----------------------------------------------------------------- 10. marquee */
+.rmc-site .marquee-two__top { background-color: var(--rmc-navy); }
+.rmc-site .marquee-two__bottom { background-color: var(--rmc-gold); }
+.rmc-site .marquee-two__bottom .marquee-two__title {
+  color: var(--rmc-navy-deep);
+  -webkit-text-stroke-color: var(--rmc-navy-deep);
+}
+.rmc-site .marquee-two__bottom .marquee-two__title__icon { color: var(--rmc-navy-deep); }
+.rmc-home .marquee-two__scroll {
+  animation: rmcMarqueeLeft 16s linear infinite;
+}
+.rmc-home .marquee-two__scroll--right {
+  animation-name: rmcMarqueeRight;
+}
+@keyframes rmcMarqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * (100% + 32px) / 15)); }
+}
+@keyframes rmcMarqueeRight {
+  from { transform: translateX(calc(-1 * (100% + 32px) / 15)); }
+  to   { transform: translateX(0); }
+}
+
+/* ------------------------------------- 11. no mask.svg fetches over file:// */
+.rmc-site .blog-card-two__shape,
+.rmc-site .about-two__image__box,
+.rmc-site .about-two__tab__image__box,
+.rmc-site .about-two__tab__shape,
+.rmc-site .testimonials-two__image__shape,
+.rmc-site .testimonials-two__carousel__shape,
+.rmc-site .funfact-one__shape,
+.rmc-site .funfact-one__item__shape,
+.rmc-site .project-two__item__shape,
+.rmc-site .main-footer--two .footer-widget--about .footer-widget__shape,
+.rmc-site .main-footer--two .footer-widget--info .footer-widget__shape {
+  -webkit-mask: none;
+  mask: none;
+}
+
+/* ------------------------------------------------------------- 12. responsive */
+@media (max-width: 1199px) {
+  .rmc-hero__title { font-size: clamp(40px, 6.6vw, 68px); }
+}
+@media (max-width: 991px) {
+  .rmc-hero { min-height: 88vh; min-height: 88svh; }
+  .rmc-hero__container { padding-top: 158px; }
+}
+@media (max-width: 767px) {
+  .rmc-hero__container {
+    gap: 30px;
+    padding-top: 136px;
+    padding-bottom: 40px;
+  }
+  .rmc-hero__title { font-size: clamp(34px, 9.6vw, 50px); }
+  .rmc-hero__lead { font-size: 16px; }
+  .rmc-hero__actions .amonx-btn { flex: 1 1 auto; justify-content: center; }
+  .rmc-hero__foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .rmc-hero__credentials {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+    width: 100%;
+  }
+  .rmc-hero__credentials li { font-size: 12px; letter-spacing: .06em; }
+}
+
+/* The template hides these blocks on mobile/tablet with opacity:0 until an
+   ".aos-animate" class is added by AOS, which this build does not load.
+   Keep the content visible at those widths instead of leaving blank space. */
+@media (max-width: 1199px) {
+  .rmc-site .analytics-one__col,
+  .rmc-site .testimonials-two__image,
+  .rmc-site .testimonials-two__carousel,
+  .rmc-site .main-footer--two .footer-widget,
+  .rmc-site .blog-two__button,
+  .rmc-site .sidebar__single,
+  .rmc-site .contact-one__left,
+  .rmc-site .contact-one__form,
+  .rmc-site .team-two__images,
+  .rmc-site .team-two__item,
+  .rmc-site .about-three__image,
+  .rmc-site .testimonials-one__custom-nav,
+  .rmc-site .achievements__item-wrap,
+  .rmc-site .work-process__card__inner,
+  .rmc-site .work-process-two .row > *,
+  .rmc-site .services-one .column-1,
+  .rmc-site .services-one .column-2,
+  .rmc-site .project-one__top__right,
+  .rmc-site .product__sidebar__item,
+  .rmc-site .product-details__product,
+  .rmc-site .product-details__content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+}

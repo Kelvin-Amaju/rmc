@@ -1,0 +1,29 @@
+/* Repairs for the existing inner-page layouts. */
+@media (min-width: 992px) {
+  .about-page-header .rmc_header_main_wrap {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 20px;
+  }
+  .about-page-header .rmc_header_main_wrap_inner { display: contents; }
+  .about-page-header .rmc_site_logo { grid-column: 1; grid-row: 1; justify-self: start; }
+  .about-page-header .rmc_main_navigation { grid-column: 2; grid-row: 1; justify-self: center; padding-inline: 24px; }
+  .about-page-header .rmc_header_btn { grid-column: 3; grid-row: 1; justify-self: end; }
+}
+.rmc-office-map { display: block; width: 100%; height: 420px; border: 0; border-radius: 20px; }
+.enquiry-note { margin: 16px 0 0; font-size: 13px; line-height: 1.7; color: inherit; }
+.rmc_service_details_content > .row img { width: 100%; height: 300px; object-fit: cover; border-radius: 16px; }
+.rmc_service_details_content .rmc_video > img { width: 100%; max-height: 440px; object-fit: cover; }
+.rmc-about-page-section .about_image img { width: 100%; object-fit: cover; }
+.rmc_about_quote .signature { width: 180px; height: auto; }
+.rmc_contact_form input, .rmc_contact_form textarea, .rmc_quote_form input, .rmc_quote_form textarea { min-width: 0; }
+.rmc_footer_widget a, .rmc_info_list .info { overflow-wrap: anywhere; }
+.rmc_icon_box_2 { min-width: 0; }
+.rmc_icon_box_2 .box_title { overflow-wrap: anywhere; }
+.rmc-about_why_choose_wrapper .choose_progress p { margin: 0; line-height: 1.8; }
+.rmc_team_member .member_name { overflow-wrap: anywhere; }
+@media (max-width: 767px) {
+  .rmc-office-map { height: 320px; }
+  .rmc_service_details_content > .row img { height: 260px; }
+}
