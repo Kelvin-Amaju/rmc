@@ -528,15 +528,15 @@ input:focus-visible {
   will-change: opacity, transform;
 }
 .hero-slide-1 {
-  background-image: url("../img/hero-meeting.jpg");
+  background-image: url("../img/collaboration.webp");
   animation-delay: 0s;
 }
 .hero-slide-2 {
-  background-image: url("../img/hero-office.jpg");
+  background-image: url("../img/desk.webp");
   animation-delay: 8s;
 }
 .hero-slide-3 {
-  background-image: url("../img/hero-charts.jpg");
+  background-image: url("../img/audit.webp");
   animation-delay: 16s;
 }
 @keyframes heroCycle {
@@ -1735,7 +1735,7 @@ input:focus-visible {
   overflow: hidden;
   isolation: isolate;
   background: var(--navy-deep)
-    url("../img/services-hero.jpg") center 45% / cover no-repeat;
+    url("../img/audit.webp") center 45% / cover no-repeat;
   padding: clamp(56px, 7vw, 92px) 0;
   color: white;
   border-radius: clamp(22px, 3vw, 42px) clamp(22px, 3vw, 42px) 0 0;
