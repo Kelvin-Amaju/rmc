@@ -120,3 +120,54 @@
    align-self: flex-start;
    padding: 10px 16px;
 }
+
+/* Equal-height cards in the index services carousel (independent of copy length). */
+.services-sec3 .service-carousel3 .swiper-wrapper {
+   align-items: stretch;
+}
+.services-sec3 .service-carousel3 .swiper-slide {
+   height: auto;
+   display: flex;
+}
+.services-sec3 .service-carousel3 .service-entry3 {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+/* Scrolled header on interior pages: white like the homepage, with dark
+   logo/nav/button so the white-on-transparent assets don't disappear. */
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on {
+   background-color: var(--white);
+}
+.navbar-brand .logo-scrolled {
+   display: none;
+}
+.header .header-nav-wrapper.scroll-on .navbar-brand .logo-top {
+   display: none;
+}
+.header .header-nav-wrapper.scroll-on .navbar-brand .logo-scrolled {
+   display: block;
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .navbar .navbar-nav>li a.nav-link {
+   color: var(--headings-color);
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .navbar .navbar-nav>li a.nav-link.active,
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .navbar .navbar-nav>li a.nav-link:hover {
+   color: var(--primary);
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .btn-border {
+   border: 1px solid var(--dark) !important;
+   color: var(--dark);
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .btn-border:hover {
+   background-color: var(--dark);
+   color: var(--white);
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .navbar-toggler.offcanvas-nav-btn {
+   color: var(--headings-color) !important;
+}
+.header.header-transparent .header-nav-wrapper.header-sticky.scroll-on .navbar-toggler.offcanvas-nav-btn svg path {
+   fill: var(--headings-color);
+}
