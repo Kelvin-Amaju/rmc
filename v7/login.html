@@ -1,69 +1,223 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0e2a47"><meta name="description" content="Secure staff account login for Rheriene Mabamidje &amp; Co."><title>Staff Login | Rheriene Mabamidje &amp; Co.</title><link rel="stylesheet" href="assets/css/home.css"><link rel="stylesheet" href="assets/css/v8.css"><link rel="stylesheet" href="assets/css/login.css"></head>
-<body class="page-login"><div class="ambient-cursor" aria-hidden="true"></div><a class="skip-link" href="#main">Skip to main content</a><div class="page-progress" id="pageProgress" aria-hidden="true"></div><div class="site-shell"><header class="site-header" id="siteHeader">
-<a aria-label="Rheriene Mabamidje and Co. — Homepage" class="brand" href="index.html">
-<span class="brand-symbol">R<span class="brand-star">✳</span>MC<span class="brand-registered">.</span></span>
-<span class="brand-description">RHERIENE MABAMIDJE &amp; CO.<small>CHARTERED ACCOUNTANTS</small></span>
-</a>
-<nav aria-label="Primary navigation" class="desktop-nav">
-<a href="index.html">Home</a>
-<a href="about.html">About us</a>
-<a href="services.html">Scope of service</a>
-<a href="contact.html">Contact</a>
-</nav>
-<div class="header-actions">
-<a class="btn-header current" aria-current="page" href="login.html">Staff Login <span aria-hidden="true" class="arrow-dot">↗</span></a>
-<button aria-controls="mobileNav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle" type="button"><span></span><span></span></button>
-</div>
-</header><nav aria-label="Mobile navigation" class="mobile-nav" id="mobileNav" inert="">
-<div class="mobile-nav-top"><span>MENU / RMC</span><span>EST. 1993</span></div>
-<a href="index.html">Home <span>01</span></a>
-<a href="about.html">About us <span>02</span></a>
-<a href="services.html">Scope of service <span>03</span></a>
-<a href="contact.html">Contact <span>04</span></a>
-<a href="login.html" aria-current="page">Staff login <span>05</span></a>
-<div class="mobile-nav-bottom"><span>Warri, Delta State · Nigeria</span><a href="mailto:info@mabamidje.com">info@mabamidje.com</a></div>
-</nav><main id="main" class="staff-login-main">
-  <section class="staff-login-layout" aria-labelledby="staffHeading">
-    <div class="staff-login-visual" aria-hidden="true">
-      <img class="staff-login-photo" src="assets/img/boardroom.webp" alt="" fetchpriority="high">
-      <div class="staff-login-image-overlay"></div>
-      <div class="staff-visual-top"><span class="staff-visual-diamond">✳</span><span>THE RMC TEAM / STAFF ACCESS</span></div>
-      <div class="staff-visual-copy" data-reveal="left">
-        <p class="staff-visual-eyebrow"><span></span> BEHIND THE WORK</p>
-        <h2>Great work<br>starts <em>here.</em></h2>
-        <p>One team. Shared purpose. The details that make the difference.</p>
-      </div>
-      <div class="staff-visual-bottom"><span>RHERIENE MABAMIDJE &amp; CO.</span><span>WARRI · NIGERIA</span></div>
-      <span class="staff-visual-orbit staff-visual-orbit-a"></span>
-      <span class="staff-visual-orbit staff-visual-orbit-b"></span>
-    </div>
-    <div class="staff-login-content">
-      <div class="staff-form-shell" data-reveal="right">
-        <div class="staff-form-upper"><span class="staff-login-label"><span class="staff-login-status"></span> STAFF PORTAL</span><span class="staff-form-number">01 / 01</span></div>
-        <div class="staff-form-intro">
-          <p class="eyebrow dark"><span class="eyebrow-dash"></span> GOOD TO HAVE YOU BACK</p>
-          <h1 id="staffHeading">Welcome<br><em>back.</em></h1>
-          <p>Enter your details to access your staff account.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0e2a47" />
+    <meta
+      name="description"
+      content="Secure staff account login for Rheriene Mabamidje &amp; Co."
+    />
+    <title>Staff Login | Rheriene Mabamidje &amp; Co.</title>
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/v8.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+  </head>
+  <body class="page-login">
+    <div class="ambient-cursor" aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
+    <div class="site-shell">
+      <!--<header class="site-header" id="siteHeader">
+        <a
+          aria-label="Rheriene Mabamidje and Co. — Homepage"
+          class="brand"
+          href="index.html"
+        >
+          <img
+            class="brand-logo"
+            src="assets/img/logo.png"
+            alt="Rheriene Mabamidje &amp; Co. — Chartered Accountants"
+          />
+        </a>
+        <nav aria-label="Primary navigation" class="desktop-nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About us</a>
+          <a href="services.html">Scope of service</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <a class="btn-header current" aria-current="page" href="login.html"
+            >Staff Login <span aria-hidden="true" class="arrow-dot">↗</span></a
+          >
+          <button
+            aria-controls="mobileNav"
+            aria-expanded="false"
+            aria-label="Open navigation"
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+          >
+            <span></span><span></span>
+          </button>
         </div>
-        <form id="staffLoginForm" class="staff-login-form" action="#" method="post" novalidate>
-          <div class="staff-field">
-            <label for="staffEmail">Work email <span aria-hidden="true">*</span></label>
-            <div class="staff-control"><span class="staff-input-icon" aria-hidden="true">@</span><input id="staffEmail" name="email" type="email" placeholder="you@company.com" autocomplete="username" inputmode="email" required maxlength="254"></div>
+      </header>
+      <nav
+        aria-label="Mobile navigation"
+        class="mobile-nav"
+        id="mobileNav"
+        inert=""
+      >
+        <div class="mobile-nav-top">
+          <span>MENU / RMC</span><span>EST. 1993</span>
+        </div>
+        <a href="index.html">Home <span>01</span></a>
+        <a href="about.html">About us <span>02</span></a>
+        <a href="services.html">Scope of service <span>03</span></a>
+        <a href="contact.html">Contact <span>04</span></a>
+        <a href="login.html" aria-current="page">Staff login <span>05</span></a>
+        <div class="mobile-nav-bottom">
+          <span>Warri, Delta State · Nigeria</span
+          ><a href="mailto:info@mabamidje.com">info@mabamidje.com</a>
+        </div>
+      </nav>-->
+      <main id="main" class="staff-login-main">
+        <section class="staff-login-layout" aria-labelledby="staffHeading">
+          <div class="staff-login-visual" aria-hidden="true">
+            <img
+              class="staff-login-photo"
+              src="assets/img/boardroom.webp"
+              alt=""
+              fetchpriority="high"
+            />
+            <div class="staff-login-image-overlay"></div>
+            <div class="staff-visual-top">
+              <span class="staff-visual-diamond">✳</span
+              ><span>THE RMC TEAM / STAFF ACCESS</span>
+            </div>
+            <div class="staff-visual-copy" data-reveal="left">
+              <p class="staff-visual-eyebrow"><span></span> BEHIND THE WORK</p>
+              <h2>Great work<br />starts <em>here.</em></h2>
+              <p>
+                One team. Shared purpose. The details that make the difference.
+              </p>
+            </div>
+            <div class="staff-visual-bottom">
+              <span>RHERIENE MABAMIDJE &amp; CO.</span
+              ><span>WARRI · NIGERIA</span>
+            </div>
+            <span class="staff-visual-orbit staff-visual-orbit-a"></span>
+            <span class="staff-visual-orbit staff-visual-orbit-b"></span>
           </div>
-          <div class="staff-field">
-            <div class="staff-field-top"><label for="staffPassword">Password <span aria-hidden="true">*</span></label><button class="staff-text-action" id="forgotPassword" type="button" aria-expanded="false" aria-controls="staffRecovery">Forgot password?</button></div>
-            <div class="staff-control"><span class="staff-input-icon" aria-hidden="true">✳</span><input id="staffPassword" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required minlength="1"><button type="button" id="showPassword" class="staff-password-toggle" aria-controls="staffPassword" aria-label="Show password" aria-pressed="false">Show</button></div>
+          <div class="staff-login-content">
+            <div class="staff-form-shell" data-reveal="right">
+              <div class="staff-form-upper">
+                <span class="staff-login-label"
+                  ><span class="staff-login-status"></span> STAFF PORTAL</span
+                ><span class="staff-form-number">01 / 01</span>
+              </div>
+              <div class="staff-form-intro">
+                <p class="eyebrow dark">
+                  <span class="eyebrow-dash"></span> GOOD TO HAVE YOU BACK
+                </p>
+                <h1 id="staffHeading">Welcome<em> back.</em></h1>
+                <p>Enter your details to access your staff account.</p>
+              </div>
+              <form
+                id="staffLoginForm"
+                class="staff-login-form"
+                action="#"
+                method="post"
+                novalidate
+              >
+                <div class="staff-field">
+                  <label for="staffEmail"
+                    >Work email <span aria-hidden="true">*</span></label
+                  >
+                  <div class="staff-control">
+                    <span class="staff-input-icon" aria-hidden="true">@</span
+                    ><input
+                      id="staffEmail"
+                      name="email"
+                      type="email"
+                      placeholder="you@company.com"
+                      autocomplete="username"
+                      inputmode="email"
+                      required
+                      maxlength="254"
+                    />
+                  </div>
+                </div>
+                <div class="staff-field">
+                  <div class="staff-field-top">
+                    <label for="staffPassword"
+                      >Password <span aria-hidden="true">*</span></label
+                    ><button
+                      class="staff-text-action"
+                      id="forgotPassword"
+                      type="button"
+                      aria-expanded="false"
+                      aria-controls="staffRecovery"
+                    >
+                      Forgot password?
+                    </button>
+                  </div>
+                  <div class="staff-control">
+                    <span class="staff-input-icon" aria-hidden="true">✳</span
+                    ><input
+                      id="staffPassword"
+                      name="password"
+                      type="password"
+                      placeholder="Enter your password"
+                      autocomplete="current-password"
+                      required
+                      minlength="1"
+                    /><button
+                      type="button"
+                      id="showPassword"
+                      class="staff-password-toggle"
+                      aria-controls="staffPassword"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                    >
+                      Show
+                    </button>
+                  </div>
+                </div>
+                <div id="staffRecovery" class="staff-recovery" hidden>
+                  <p>
+                    <strong>Need to reset your password?</strong> Please contact
+                    your staff account administrator.
+                  </p>
+                  <a href="contact.html"
+                    >Contact RMC <span aria-hidden="true">↗</span></a
+                  >
+                </div>
+                <label class="staff-remember"
+                  ><input type="checkbox" name="remember" value="1" /><span
+                    >Remember my email</span
+                  ></label
+                >
+                <button type="submit" class="staff-submit">
+                  Sign in to your account
+                  <span class="staff-submit-arrow" aria-hidden="true">↗</span>
+                </button>
+                <p
+                  id="staffFormStatus"
+                  class="staff-form-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </form>
+              <p class="staff-form-footer">
+                Having trouble signing in?
+                <a href="contact.html"
+                  >Get assistance <span aria-hidden="true">↗</span></a
+                >
+              </p>
+            </div>
+            <div class="staff-login-footnote">
+              <span>RMC / AUTHORIZED TEAM ACCESS</span><span>EST. 1993</span>
+            </div>
           </div>
-          <div id="staffRecovery" class="staff-recovery" hidden><p><strong>Need to reset your password?</strong> Please contact your staff account administrator.</p><a href="contact.html">Contact RMC <span aria-hidden="true">↗</span></a></div>
-          <label class="staff-remember"><input type="checkbox" name="remember" value="1"><span>Remember my email</span></label>
-          <button type="submit" class="staff-submit">Sign in to your account <span class="staff-submit-arrow" aria-hidden="true">↗</span></button>
-          <p id="staffFormStatus" class="staff-form-status" role="status" aria-live="polite"></p>
-        </form>
-        <p class="staff-form-footer">Having trouble signing in? <a href="contact.html">Get assistance <span aria-hidden="true">↗</span></a></p>
-      </div>
-      <div class="staff-login-footnote"><span>RMC / AUTHORIZED TEAM ACCESS</span><span>EST. 1993</span></div>
+        </section>
+      </main>
     </div>
-  </section>
-</main></div><script src="assets/js/shared.js" defer></script><script src="assets/js/effects.js" defer></script><script src="assets/js/login.js" defer></script></body></html>
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/effects.js" defer></script>
+    <script src="assets/js/login.js" defer></script>
+  </body>
+</html>

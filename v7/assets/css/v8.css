@@ -31,7 +31,7 @@ body.menu-open .site-header{position:fixed;top:0;left:0;right:0}
 .fluid-photo:hover>img{transform:translate3d(0,var(--fluid-image-y,0px),0) scale(1.14);filter:saturate(1.08)}
 .fluid-photo::after,.service-photo::after,.about-main-img::after,.about-small-img::after{content:'';pointer-events:none;position:absolute;inset:0;background:linear-gradient(112deg,transparent 24%,rgba(236,255,222,.14) 41%,transparent 60%);transform:translateX(-140%) skewX(-12deg);transition:transform 1.65s var(--liquid-ease)}
 .fluid-photo:hover::after,.service-card:hover .service-photo::after,.about-main-img:hover::after,.about-small-img:hover::after{transform:translateX(140%) skewX(-12deg)}
-.service-photo,.about-main-img,.about-small-img{position:relative;overflow:hidden}
+.service-photo{position:relative}.service-photo,.about-main-img,.about-small-img{overflow:hidden}
 .service-photo img{transform:translate3d(0,var(--fluid-image-y,0px),0) scale(1.035);transition:transform 1.5s var(--liquid-ease),filter .75s ease}
 .service-card:hover .service-photo img{transform:translate3d(0,var(--fluid-image-y,0px),0) scale(1.13)}
 /* Physics-like but restrained moving highlights on links/cards. */
@@ -47,8 +47,8 @@ body.menu-open .site-header{position:fixed;top:0;left:0;right:0}
 @media(max-width:900px){
   :root{--header:88px}
   .site-header{height:88px;min-height:88px;padding-inline:var(--pad)}
-  .mobile-nav{inset:88px auto 0 0;right:auto;left:0;top:88px;width:min(560px,94vw);padding:clamp(25px,4vw,49px) clamp(23px,5vw,44px) 45px;background:#dfe9f0;box-shadow:30px 18px 75px #0a121c33;transform:translate3d(-108%,0,0) rotateY(5deg);transform-origin:left center;visibility:hidden;transition:transform .9s var(--liquid-ease),visibility .9s;overflow-x:hidden}
-  .mobile-nav::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 0 20%,#b0ccdf8a,transparent 46%),radial-gradient(circle at 0 85%,#baccd84f,transparent 50%);animation:panel-mist 12s ease-in-out infinite alternate}
+  .mobile-nav{inset:88px 0 0 0;right:0;left:0;top:88px;width:100%;max-width:none;padding:clamp(25px,4vw,49px) clamp(23px,5vw,44px) 45px;background:#fff;box-shadow:30px 18px 75px #0a121c33;transform:translate3d(-108%,0,0) rotateY(5deg);transform-origin:left center;visibility:hidden;transition:transform .9s var(--liquid-ease),visibility .9s;overflow-x:hidden}
+  .mobile-nav::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 0 20%,#eef4f952,transparent 46%),radial-gradient(circle at 0 85%,#f1f6fa3d,transparent 50%);animation:panel-mist 12s ease-in-out infinite alternate}
   .mobile-nav.is-open{transform:translate3d(0,0,0) rotateY(0);visibility:visible}
   @keyframes panel-mist{from{transform:translate3d(-4%,0,0)}to{transform:translate3d(4%,4%,0)}}
   .mobile-nav>a,.mobile-nav-top,.mobile-nav-bottom{position:relative;z-index:1}
@@ -61,7 +61,7 @@ body.menu-open .site-header{position:fixed;top:0;left:0;right:0}
   .menu-toggle{width:53px;height:53px;border:1px solid #dfe4e7;border-radius:50%;position:relative;z-index:31;transition:background .35s,transform .35s}
   .menu-toggle:hover{background:#d2e2ed;transform:rotate(-7deg)}
 }
-@media(max-width:680px){:root{--header:80px}.site-header{height:80px;min-height:80px}.mobile-nav{top:80px;width:min(520px,92vw)}.hero{height:min(830px,calc(100svh - 80px))}.brand-symbol{font-size:37px}.brand-description{font-size:8px}.liquid-blob{width:115px;opacity:.25}.motion-words-ready .fluid-word-core{filter:blur(3px)}.floating-spark{display:none}}
+@media(max-width:680px){:root{--header:80px}.site-header{height:80px;min-height:80px}.mobile-nav{top:80px;width:100%}.hero{height:min(830px,calc(100svh - 80px))}.brand-symbol{font-size:37px}.brand-description{font-size:8px}.liquid-blob{width:115px;opacity:.25}.motion-words-ready .fluid-word-core{filter:blur(3px)}.floating-spark{display:none}}
 /* NEW INTERNAL PAGE SYSTEM — retains homepage typography, buttons and footer */
 .interior-hero{min-height:clamp(585px,calc(87svh - var(--header)),890px);color:#fff;background:#101f30;isolation:isolate;position:relative;overflow:hidden;display:flex;align-items:center}
 .interior-hero-photo,.interior-hero-photo img,.interior-hero-shade{position:absolute;inset:0;width:100%;height:100%}
@@ -109,3 +109,12 @@ body.menu-open .site-header{position:fixed;top:0;left:0;right:0}
 @media(max-width:680px){.interior-hero{min-height:650px;min-height:calc(94svh - var(--header));}.interior-hero-inner{padding-block:95px 100px}.interior-title{font-size:clamp(48px,10vw,70px);line-height:1.075;overflow-wrap:anywhere}.interior-intro{font-size:15px}.interior-ripple{display:none}.interior-hero-ripple{width:85vw;right:-39%}.interior-edge-text{font-size:8px}.story-photo{height:420px;margin-top:26px;border-radius:0 60px 0 0}.story-milestones{gap:4px}.story-milestones strong{font-size:31px}.story-milestones span{font-size:8px}.leadership-picture,.feature-image,.visit-visual{height:clamp(365px,105vw,520px)}.values-grid,.credential-cards{grid-template-columns:1fr;margin-top:30px}.value-block{min-height:280px}.value-symbol{font-size:75px}.credential-cards article{min-height:265px}.credential-cards img{margin-bottom:25px}.catalogue-heading-row>span{display:none}.catalogue-item{grid-template-columns:44px minmax(0,1fr) 45px;gap:12px;padding:26px 0;min-height:160px}.catalogue-number{font-size:9px;padding-top:5px}.catalogue-thumb{display:none}.catalogue-name h3{font-size:clamp(22px,5.3vw,32px)}.catalogue-name p{font-size:13px;line-height:1.55}.catalogue-arrow{width:41px;height:41px}.catalogue-item:hover{padding-left:0;padding-right:0}.contact-form-shell{padding:27px 23px;border-radius:0 44px 0 0}.contact-form-shell h3{margin:35px 0 14px}.form-fields{grid-template-columns:1fr;gap:18px}.form-fields label.full{grid-column:auto}.gateway-panel{padding:30px;min-height:500px;border-radius:43px 0 43px 0}.gateway-panel-mark{font-size:80px}.leadership-copy .display-heading,.service-feature .display-heading{font-size:clamp(40px,9vw,59px)}.picture-label{font-size:8px;gap:14px}.staff-help-row .display-heading{margin-bottom:0}}
 @media(max-width:360px){.interior-title{font-size:46px}.mobile-nav>a{font-size:30px}.gateway-panel-mark{font-size:68px}}
 @media(prefers-reduced-motion:reduce){.liquid-blob,.floating-spark,.eyebrow-dash,.interior-hero-photo img,.interior-hero-ripple,.gateway-panel::before,.interior-scroll span{animation:none!important}.motion-words-ready .fluid-word-core{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}.liquid-section::before,.fluid-photo>img,.service-photo img{transform:none!important}.menu-backdrop,.mobile-nav,.mobile-nav>a,.mobile-nav-top,.mobile-nav-bottom{transition-duration:.01ms!important}}
+/* Image wordmark shared by every page header (replaces the R✳MC text mark). */
+.brand-logo{display:block;height:clamp(44px,3.8vw,68px);width:auto;flex-shrink:0}
+@media(max-width:900px){.brand-logo{height:54px}}
+@media(max-width:680px){.brand-logo{height:44px}}
+@media(max-width:360px){.brand-logo{height:38px}}
+/* Wide Google map under the "Find us" photo — same embed and sizing as the v8 contact page. */
+.visit-map{margin-top:clamp(30px,4.5vw,70px)}
+.visit-map iframe{display:block;width:100%;height:340px;border:1px solid #d8e1e9;border-radius:12px}
+@media(max-width:680px){.visit-map iframe{height:280px}}
