@@ -27,18 +27,31 @@ const pages = process.argv[3] ? process.argv[3].split(',') : ['index', 'about', 
           document.querySelectorAll('img[loading="lazy"]').forEach(i => { i.loading = 'eager'; });
           await Promise.all([...document.images].map(i => i.decode().catch(() => {})));
         });
-        const report = await page.evaluate(() => ({
-          width: innerWidth,
-          scrollWidth: document.documentElement.scrollWidth,
-          brokenImages: [...document.images].filter(i => !i.complete || !i.naturalWidth).map(i => i.getAttribute('src')),
-          overflow: [...document.querySelectorAll('body *')].filter(e => {
-            const r = e.getBoundingClientRect();
-            const s = getComputedStyle(e);
-            return s.position !== 'fixed' && r.width > 0 && r.right > innerWidth + 2 &&
-              !e.closest('.owl-stage, .marquee, .marquee-two, .rmc_marquee_scroll, .swiper, [class*=carousel], [class*=slider], [class*=marquee], .hero-slides, [class*=offcanvas], [class*=Offcanvas]') &&
-              !e.className.toString().match(/offcanvas/i);
-          }).slice(0, 7).map(e => ({ cls: (e.className && e.className.toString && e.className.toString().slice(0, 60)) || e.tagName, right: Math.round(e.getBoundingClientRect().right) }))
-        }));
+        const report = await page.evaluate(() => {
+          /* An element that sticks out is only a real problem when nothing
+             between it and the root clips it. */
+          const isClipped = (el) => {
+            let p = el.parentElement;
+            while (p && p !== document.documentElement) {
+              if (/hidden|clip|auto|scroll/.test(getComputedStyle(p).overflowX)) return true;
+              p = p.parentElement;
+            }
+            return false;
+          };
+          return {
+            width: innerWidth,
+            scrollWidth: document.documentElement.scrollWidth,
+            brokenImages: [...document.images].filter(i => !i.complete || !i.naturalWidth).map(i => i.getAttribute('src')),
+            overflow: [...document.querySelectorAll('body *')].filter(e => {
+              const r = e.getBoundingClientRect();
+              const s = getComputedStyle(e);
+              return s.position !== 'fixed' && r.width > 0 && r.right > innerWidth + 2 &&
+                !isClipped(e) &&
+                !e.closest('.owl-stage, .marquee, .marquee-two, .rmc_marquee_scroll, .swiper, [class*=carousel], [class*=slider], [class*=marquee], .hero-slides, [class*=offcanvas], [class*=Offcanvas]') &&
+                !e.className.toString().match(/offcanvas/i);
+            }).slice(0, 7).map(e => ({ cls: (e.className && e.className.toString && e.className.toString().slice(0, 60)) || e.tagName, right: Math.round(e.getBoundingClientRect().right) }))
+          };
+        });
         reports.push({ name, ...report });
         const bad = report.scrollWidth > width + 1 || report.brokenImages.length || report.overflow.length;
         if (bad) console.log('WARN', `${name}@${width}`, JSON.stringify(report));

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e2a47" />
+    <meta name="description" content="Staff webmail access for Rheriene Mabamidje &amp; Co., Chartered Accountants." />
+    <title>Staff Login | Rheriene Mabamidje &amp; Co.</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/remixicon.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/rmc.css" />
+    <link rel="icon" type="image/png" href="assets/img/rmc/favicon.png" />
+    <style>
+      .staff-login-page { min-height: 100vh; min-height: 100svh; margin: 0; background: #f4f7fa; color: #5b6673; font-family: "DM Sans", sans-serif; }
+      .staff-login-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100vh; min-height: 100svh; }
+      .staff-login-visual { position: relative; display: flex; min-width: 0; min-height: 620px; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(28px, 5vw, 76px); color: #fff; background: #0e2a47; isolation: isolate; }
+      .staff-login-visual::before { position: absolute; z-index: -2; inset: 0; background: url("assets/img/rmc/boardroom.webp") center / cover; content: ""; }
+      .staff-login-visual::after { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(14,42,71,.42), rgba(14,42,71,.2) 38%, rgba(8,27,47,.9)); content: ""; }
+      .staff-back { align-self: flex-start; color: #fff; font-size: 14px; }
+      .staff-back span { margin-right: 10px; }
+      .staff-visual-copy { max-width: 570px; padding: 60px 0; }
+      .staff-eyebrow { display: block; color: #a8cfe9; font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+      .staff-visual-copy h1 { margin: 22px 0; color: #fff; font-family: "Rethink Sans", sans-serif; font-size: clamp(38px, 5vw, 70px); font-weight: 600; letter-spacing: -.045em; line-height: 1.08; }
+      .staff-visual-copy p { max-width: 390px; margin: 0; color: #e1eaf0; font-size: 17px; line-height: 1.7; }
+      .staff-visual-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; border-top: 1px solid #ffffff45; padding-top: 20px; color: #e1eaf0; font-size: 11px; letter-spacing: .07em; }
+      .staff-login-panel { display: flex; min-width: 0; align-items: center; justify-content: center; padding: clamp(36px, 6vw, 88px); background: #fff; }
+      .staff-login-box { width: 100%; max-width: 430px; }
+      .staff-brand { display: inline-block; margin-bottom: 42px; }
+      .staff-brand img { display: block; width: 220px; max-width: 100%; height: auto; }
+      .staff-login-box h2 { margin: 14px 0 10px; color: #0e2a47; font-family: "Rethink Sans", sans-serif; font-size: clamp(32px, 3.4vw, 44px); font-weight: 600; letter-spacing: -.04em; line-height: 1.15; }
+      .staff-login-intro { margin: 0 0 30px; line-height: 1.65; }
+      .staff-field { margin-bottom: 22px; }
+      .staff-field label { display: block; margin-bottom: 8px; color: #0e2a47; font-size: 14px; font-weight: 600; }
+      .staff-field input { width: 100%; min-width: 0; border: 1px solid #d5dee6; border-radius: 5px; padding: 14px 15px; color: #0e2a47; background: #f8fafc; font: inherit; }
+      .staff-field input:focus { border-color: #3576a2; outline: 3px solid #3576a233; background: #fff; }
+      .staff-password { position: relative; }
+      .staff-password input { padding-right: 76px; }
+      .staff-password button { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); border: 0; padding: 8px; color: #3576a2; background: transparent; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+      .staff-submit { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid #3576a2; border-radius: 5px; padding: 15px 18px; color: #fff; background: #3576a2; font: inherit; font-weight: 700; cursor: pointer; }
+      .staff-submit:hover { background: #285d80; }
+      .staff-submit span:last-child, .staff-direct span { font-size: 20px; }
+      .staff-login-status { margin: 12px 0 0; color: #0e2a47; font-size: 14px; }
+      .staff-login-status:empty { display: none; }
+      .staff-direct { display: inline-flex; align-items: center; gap: 8px; margin-top: 19px; font-size: 14px; font-weight: 700; }
+      .staff-login-help { margin-top: 28px; border-top: 1px solid #e1e7ec; padding-top: 20px; font-size: 13px; }
+      .staff-login-help a { font-weight: 700; }
+      .staff-login-page a:focus-visible, .staff-login-page button:focus-visible { outline: 3px solid #3576a2; outline-offset: 4px; }
+      @media (max-width: 800px) {
+        .staff-login-layout { grid-template-columns: minmax(0, 42%) minmax(0, 58%); }
+        .staff-login-visual { min-height: 560px; padding: 32px 26px; }
+        .staff-visual-copy h1 { font-size: clamp(34px, 5vw, 48px); }
+        .staff-login-panel { padding: 38px clamp(22px, 5vw, 48px); }
+        .staff-brand { margin-bottom: 30px; }
+      }
+      @media (max-width: 620px) {
+        .staff-login-layout { grid-template-columns: minmax(0, 1fr); }
+        .staff-login-visual { min-height: 300px; padding: 24px; }
+        .staff-visual-copy { padding: 40px 0 28px; }
+        .staff-visual-copy h1 { margin: 15px 0; font-size: clamp(34px, 9vw, 46px); }
+        .staff-visual-copy p { font-size: 15px; }
+        .staff-visual-footer { display: none; }
+        .staff-login-panel { padding: 38px 24px 48px; }
+        .staff-brand { margin-bottom: 26px; }
+      }
+      @media (max-width: 360px) {
+        .staff-login-visual { min-height: 270px; padding: 20px; }
+        .staff-login-panel { padding-right: 20px; padding-left: 20px; }
+        .staff-login-box h2 { font-size: 30px; }
+      }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+    </style>
+  </head>
+  <body class="staff-login-page">
+    <main class="staff-login-layout">
+      <section class="staff-login-visual" aria-labelledby="portal-heading">
+        <a href="index.html" class="staff-back"><span aria-hidden="true">&larr;</span>Back to website</a>
+        <div class="staff-visual-copy">
+          <span class="staff-eyebrow">RMC STAFF PORTAL</span>
+          <h1 id="portal-heading">Professionalism.<br />In every detail.</h1>
+          <p>A shared commitment to excellence in accounting, audit, tax and advisory services.</p>
+        </div>
+        <div class="staff-visual-footer"><span>Rheriene Mabamidje &amp; Co.</span><span>Chartered Accountants · Warri, Nigeria</span></div>
+      </section>
+      <section class="staff-login-panel" aria-labelledby="login-heading">
+        <div class="staff-login-box">
+          <a class="staff-brand" href="index.html"><img src="assets/img/rmc/brand-logo.png" alt="Rheriene Mabamidje &amp; Co. home" /></a>
+          <span class="staff-eyebrow">STAFF WEBMAIL</span>
+          <h2 id="login-heading">Welcome back.</h2>
+          <p class="staff-login-intro">Sign in with your firm email address to access your mailbox.</p>
+          <form id="staffLoginForm" action="https://server354.web-hosting.com:2096/login/?login_theme=cpanel" method="post">
+            <div class="staff-field">
+              <label for="staffEmail">Email address</label>
+              <input id="staffEmail" name="user" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" inputmode="email" placeholder="you@mabamidje.com" required />
+            </div>
+            <div class="staff-field">
+              <label for="staffPassword">Password</label>
+              <div class="staff-password">
+                <input id="staffPassword" name="pass" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+                <button id="togglePassword" type="button" aria-controls="staffPassword" aria-label="Show password" aria-pressed="false">Show</button>
+              </div>
+            </div>
+            <button class="staff-submit" type="submit"><span>Sign in to webmail</span><span aria-hidden="true">&nearr;</span></button>
+            <p id="loginStatus" class="staff-login-status" role="status" aria-live="polite"></p>
+          </form>
+          <a class="staff-direct" href="https://server354.web-hosting.com:2096">Open webmail directly <span aria-hidden="true">&nearr;</span></a>
+          <div class="staff-login-help">Need help accessing your account? <a href="contact.html">Contact the firm</a></div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const password = document.getElementById('staffPassword');
+      const toggle = document.getElementById('togglePassword');
+      toggle.addEventListener('click', () => {
+        const showing = password.type === 'password';
+        password.type = showing ? 'text' : 'password';
+        toggle.textContent = showing ? 'Hide' : 'Show';
+        toggle.setAttribute('aria-label', showing ? 'Hide password' : 'Show password');
+        toggle.setAttribute('aria-pressed', String(showing));
+      });
+    </script>
+  </body>
+</html>

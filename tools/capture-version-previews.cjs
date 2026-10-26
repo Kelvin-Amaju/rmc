@@ -1,11 +1,14 @@
 const { chromium } = require('C:/Users/USER/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const fs = require('node:fs');
 const path = require('node:path');
+const only = process.argv[2] ? process.argv[2].split(',').map(Number) : null;
 (async () => {
  const browser = await chromium.launch({ channel: 'chrome', headless: true });
  fs.mkdirSync('assets/img/previews', { recursive: true });
  try {
-  for (let n = 1; n <= 8; n++) {
+   for (let n = 1; n <= 9; n++) {
+    if (only && !only.includes(n)) continue;
+
    const page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
    await page.route(/^https?:/, route => route.abort());
    await page.goto('file:///' + path.resolve(`v${n}/index.html`).replaceAll('\\', '/'), { waitUntil: 'load' });

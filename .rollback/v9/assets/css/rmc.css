@@ -1,0 +1,347 @@
+/* RMC brand overrides for the Exrox port (v9).
+   Loaded AFTER style.css / footer.css / responsive.css / dark-theme.css so the
+   RMC palette wins over the template defaults.
+   Palette taken from the approved logo (brand-logo.png: blue #3576A2 +
+   grey #999999) with a deep navy for headings and dark panels. */
+
+:root {
+   --primaryColor: #3576a2;
+   --secondaryColor: #a8cfe9;
+   --optionalColor: #5b93bd;
+   --titleColor: #0e2a47;
+   --paraColor: #5b6673;
+   --grayColor: #94a3ad;
+   --ashColor: #f4f7fa;
+   --offwhiteColor: rgba(255, 255, 255, 0.72);
+   --darkParaColor: #c3ccd4;
+   --borderColor: rgba(14, 42, 71, 0.12);
+}
+
+/* ------------------------------------------------------------------
+   Surfaces
+------------------------------------------------------------------ */
+.bg-albastor {
+   background-color: #f4f7fa;
+}
+
+/* Dark panel backgrounds. The template ships white text on these, the
+   RMC palette needs it flipped. */
+.bg_secondary {
+   background-color: #a8cfe9;
+}
+
+.bg_primary {
+   background-color: #0e2a47;
+}
+
+/* Accent text on dark surfaces (hero headings, top bar, footer). */
+.text_secondary {
+   color: #a8cfe9;
+}
+
+.text_white,
+.text-white {
+   color: #fff;
+}
+
+/* ------------------------------------------------------------------
+   Buttons
+------------------------------------------------------------------ */
+.btn.style-one .btn-text,
+.btn.style-three .btn-text {
+   color: #0e2a47;
+}
+
+.btn.style-one .btn-icon-one,
+.btn.style-one .btn-icon-two,
+.btn.style-three .btn-icon-one,
+.btn.style-three .btn-icon-two {
+   background-color: #a8cfe9;
+}
+
+.btn.style-three .btn-text {
+   border-color: #a8cfe9;
+}
+
+.btn.style-three:hover .btn-text {
+   background-color: #a8cfe9;
+   color: #0e2a47;
+}
+
+.btn.style-two .btn-text {
+   color: #0e2a47;
+}
+
+/* ------------------------------------------------------------------
+   Logo sizing (the approved RMC logo is 890x297, the template expects
+   a 112x41 mark, so it has to be constrained).
+------------------------------------------------------------------ */
+.navbar-brand img,
+.footer-area .logo img,
+.login-area .logo img {
+   max-height: 46px;
+   width: auto;
+}
+
+.login-area .logo img {
+   max-height: 58px;
+}
+
+.navbar-brand {
+   display: flex;
+   align-items: center;
+}
+
+/* ------------------------------------------------------------------
+   Hero / registration strip
+------------------------------------------------------------------ */
+.reg-list {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 8px 18px;
+}
+
+.reg-list li {
+   position: relative;
+   color: #fff;
+   font-size: 15px;
+   font-weight: 600;
+   letter-spacing: .02em;
+}
+
+.reg-list li + li:before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: -11px;
+   width: 4px;
+   height: 4px;
+   border-radius: 50%;
+   background: #a8cfe9;
+   transform: translateY(-50%);
+}
+
+/* ------------------------------------------------------------------
+   Content panels
+------------------------------------------------------------------ */
+.outcome-box.bg_primary p {
+   color: #fff;
+}
+
+.founders-box .support-box {
+   background-color: #3576a2;
+}
+
+.about-area.style-two .about-img-wrap h3 {
+   color: #fff;
+}
+
+/* Registration badges in the "professional registrations" strip. */
+.brand-logo img {
+   max-height: 74px;
+   width: auto;
+}
+
+/* Keep the verified FIRS registration text clear beside image badges. */
+.brand-logo .registration-name {
+   display: block;
+   color: var(--titleColor);
+   font-size: clamp(15px, 1.2vw, 20px);
+   font-weight: 700;
+   line-height: 1.3;
+   text-align: center;
+}
+
+/* The hero shows the fixed founding year, not a stale years counter. */
+.hero-slide-item.style-one .stat-card.style-three h3 {
+   font-size: clamp(38px, 3.8vw, 54px);
+   line-height: 1.05;
+   white-space: nowrap;
+}
+
+.hero-slide-item.style-one .stat-card.style-three > span {
+   margin-bottom: 18px;
+}
+
+.brand-logo .registration-name {
+   display: block;
+   color: var(--titleColor);
+   font-size: clamp(15px, 1.2vw, 20px);
+   font-weight: 700;
+   line-height: 1.3;
+   text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   Forms
+------------------------------------------------------------------ */
+.contact-form.style-three .form-group select {
+   width: 100%;
+   background-color: transparent;
+   border: 0;
+   border-bottom: 1px solid #d9dfe5;
+   padding: 12px 0;
+   font-size: 18px;
+   color: #0e2a47;
+   outline: 0;
+   appearance: none;
+   -webkit-appearance: none;
+   border-radius: 0;
+}
+
+.contact-form.style-three .form-group select:focus {
+   border-color: #3576a2;
+}
+
+.contact-form.style-three .form-group select option {
+   color: #0e2a47;
+}
+
+/* Long service names must not be squeezed into equal-width chips. */
+.contact-form.style-three .service-btn-wrap .service-btn {
+   flex: 0 1 auto;
+   min-width: 190px;
+}
+
+.contact-form.style-three .service-btn-wrap .service-btn label {
+   background-color: #f4f7fa;
+   color: #0e2a47;
+   line-height: 1.45;
+}
+
+.contact-form.style-three .service-btn-wrap .service-btn input:checked + label {
+   background-color: #3576a2;
+   color: #fff;
+}
+
+.contact-form.style-three .form-group input,
+.contact-form.style-three .form-group textarea {
+   border-bottom-color: #d9dfe5;
+}
+
+.contact-form.style-three .form-group input:focus,
+.contact-form.style-three .form-group textarea:focus {
+   border-bottom-color: #3576a2;
+}
+
+.form-check-input:checked {
+   background-color: #3576a2;
+   border-color: #3576a2;
+}
+
+/* ------------------------------------------------------------------
+   Service cards
+------------------------------------------------------------------ */
+.service-card.style-three .service-info h3 {
+   margin-bottom: 14px;
+}
+
+.service-card.style-three .service-info p {
+   margin-bottom: 18px;
+}
+
+.service-card.style-three .service-img {
+   height: 220px;
+}
+
+.service-card.style-three .service-img img {
+   height: 100%;
+   object-fit: cover;
+}
+
+/* ------------------------------------------------------------------
+    Footer
+   The template pins the footer to the bottom of the viewport
+   (`position: sticky; bottom: 0`) which floats it over the page and
+   hides the content underneath. RMC keeps the footer in normal flow.
+------------------------------------------------------------------ */
+.footer-area.style-one {
+   position: static;
+   bottom: auto;
+}
+
+.footer-area.style-one .logo-text {
+   font-size: clamp(5rem, 9vw, 10.2rem);
+   line-height: 1;
+}
+
+/* Decorative watermark behind the "about" image. */
+.about-watermark {
+   font-size: clamp(2.5rem, 9vw, 72px);
+   line-height: 1;
+   opacity: .08;
+}
+
+/* ------------------------------------------------------------------
+    Small-screen overflow fixes
+   The template hard-codes `width: calc(100% - 52px)` on the achievement
+   list spans, which flex-shrinks below the text width and pushes the
+   list past the viewport on phones. Let the label flex and wrap instead.
+------------------------------------------------------------------ */
+.about-area.style-one .about-content .achievement-box ul li {
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 14px;
+}
+
+.about-area.style-one .about-content .achievement-box ul li span {
+   width: auto;
+   min-width: 0;
+}
+
+.about-area.style-one .about-content .achievement-box ul li span:first-child {
+   flex: 1 1 auto;
+   width: auto;
+   overflow-wrap: anywhere;
+}
+
+.about-area.style-one .about-content .achievement-box ul li span:nth-child(2) {
+   flex: 0 0 auto;
+   width: auto;
+   max-width: 45%;
+   text-align: right;
+}
+
+/* The decorative shape above the "about" image is wider than a phone
+   viewport; drop it on small screens. */
+@media (max-width: 767px) {
+   .about-shape.move-right-full {
+      display: none;
+   }
+}
+
+/* The split-text heading animation slides its letters outside the
+   heading box while it plays, which produced a horizontal scrollbar on
+   narrow phones. Clip instead of scroll. */
+.reveal-text-right,
+.reveal-text-bottom,
+.title-anim {
+   overflow-x: clip;
+}
+
+/* ------------------------------------------------------------------
+    Misc
+------------------------------------------------------------------ */
+.link-hover-primary:hover {
+   color: #3576a2;
+}
+
+.text-para {
+   color: #5b6673;
+}
+
+.section-title.style-two {
+   color: #0e2a47;
+}
+
+.footer-area.style-one .contact-num,
+.footer-area.style-one .copyright-text .text_secondary {
+   color: #a8cfe9;
+}
+
+.footer-area.style-one .text-gray {
+   color: #94a3ad;
+}
